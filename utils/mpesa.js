@@ -48,7 +48,7 @@ class MPESAService {
       );
 
       let response = await axios.get(
-        "https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
+        "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
         {
           headers: {
             authorization: `Basic ${auth}`,
@@ -75,7 +75,7 @@ class MPESAService {
       const formattedPhone = formatPhoneNumber(phone);
 
       const { data } = await axios.post(
-        "https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
+        "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
         {
           BusinessShortCode: this.shortcode,
           Password: password,
