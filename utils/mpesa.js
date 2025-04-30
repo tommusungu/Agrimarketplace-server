@@ -62,7 +62,7 @@ class MPESAService {
     }
   }
 
-  async initiateSTKPush({ phone, amount, reference, description }) {
+  async initiateSTKPush({ phone, amount, reference }) {
     try {
       amount = 1;
       const token = await this.getAccessToken();
@@ -87,7 +87,7 @@ class MPESAService {
           PhoneNumber: formattedPhone,
           CallBackURL: this.callbackUrl,
           AccountReference: reference,
-          TransactionDesc: description || "Payment",
+          TransactionDesc: "Payment transaction",
         },
         {
           headers: {
